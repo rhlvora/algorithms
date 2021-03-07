@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ReferenceTypes
 {
@@ -29,6 +30,13 @@ namespace ReferenceTypes
 
 			Console.WriteLine(Arr[0]);
 
+			var list = new List<int>() {10,10};
+
+			Console.WriteLine("passing list in");
+
+			Console.WriteLine(list[0]);
+			ListDoSomething(list);
+			Console.WriteLine(list[0]);
 			
         }
 
@@ -53,6 +61,14 @@ namespace ReferenceTypes
 
 			//this will work
 			arr = new int[2] {3,3};
+		}
+
+		static void ListDoSomething(List<int> list)
+		{
+			list[0] = 0;
+
+			//again, this won't work
+			list = new List<int>() {3, 3};
 		}
 
 
